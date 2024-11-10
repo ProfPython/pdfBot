@@ -87,7 +87,7 @@ function FileUploader() {
             }`}
             role="progressbar"
             style={{
-              // @ts-ignore
+              // @ts-expect-error: Custom properties for CSS-in-JS, TypeScript may not recognize these
               "--value": progress,
               "--size": "12rem",
               "--thickness": "1.3rem",
@@ -98,11 +98,11 @@ function FileUploader() {
 
           {/* Render Status Icon */}
           {
-            // @ts-ignore
+            // @ts-expect-error: status is expected to be defined here
             statusIcons[status!]
           }
 
-          {/* @ts-ignore */}
+          {/* @ts-expect-error: Suppress type error for status prop, TypeScript may not recognize it correctly*/}
           <p className="text-indigo-600 animate-pulse">{status}</p>
         </div>
       )}

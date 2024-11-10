@@ -3,6 +3,7 @@ import PlaceholderDocument from "./PlaceholderDocument";
 import { auth } from "@clerk/nextjs/server";
 import Document from "./Document";
 
+
 async function Documents() {
   auth().protect();
 
@@ -19,7 +20,7 @@ async function Documents() {
     .get();
 
   return (
-    <div className="flex flex-wrap p-5 bg-gray-100 justify-center lg:justify-start rounded-sm gap-5 max-w-7xl mx-auto">
+    <div className="flex flex-wrap bg-gray-700 p-5 justify-center lg:justify-start rounded-sm gap-5 max-w-7xl mx-auto">
       {/* Map through the documents */}
       {documentsSnapshot.docs.map((doc) => {
         const { name, downloadUrl, size } = doc.data();

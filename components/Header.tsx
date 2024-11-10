@@ -2,13 +2,14 @@ import { SignedIn, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { FilePlus2 } from "lucide-react";
-import UpgradeButton from "./UpgradeButton";
+import UpgradeButton from "./upgradeButton";
+import ModeToggle from "./modeToggle";
 
 function Header() {
   return (
-    <div className="flex justify-between bg-white shadow-sm p-5 border-b">
+    <div className="flex justify-between shadow-sm p-5 border-b">
       <Link href="/dashboard" className="text-2xl">
-        Chat to <span className="text-indigo-600">PDF</span>
+        pdf <span className="text-indigo-600">Bot</span>
       </Link>
 
       <SignedIn>
@@ -29,6 +30,7 @@ function Header() {
 
           <UpgradeButton />
           <UserButton />
+          <ModeToggle />
         </div>
       </SignedIn>
     </div>
