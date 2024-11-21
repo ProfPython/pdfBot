@@ -7,7 +7,7 @@ import ModeToggle from "./modeToggle";
 
 function Header() {
   return (
-    <div className="flex justify-between shadow-sm p-5 border-b">
+    <div className="flex sticky z-50 top-0 bg-black justify-between shadow-sm p-5 border-b">
       <Link href="/dashboard" className="text-2xl">
         pdf <span className="text-indigo-600">Bot</span>
       </Link>
@@ -22,14 +22,18 @@ function Header() {
             <Link href="/dashboard">My Documents</Link>
           </Button>
 
-          <Button asChild variant="outline" className="border-indigo-600">
+          <Button asChild variant="outline" className="hidden md:block border-indigo-600">
             <Link href="/dashboard/upload">
               <FilePlus2 className="text-indigo-600" />
             </Link>
           </Button>
 
-          <UpgradeButton />
-          <UserButton />
+          <div className="hidden md:block"> 
+            <UpgradeButton /> 
+          </div> 
+     
+          <UserButton /> 
+         
           <ModeToggle />
         </div>
       </SignedIn>

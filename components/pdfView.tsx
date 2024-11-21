@@ -23,7 +23,7 @@ function PdfView({ url }: { url: string }) {
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [file, setFile] = useState<Blob | null>(null);
   const [rotation, setRotation] = useState<number>(0);
-  const [scale, setScale] = useState<number>(1);
+  const [scale, setScale] = useState<number>(1); 
 
   useEffect(() => {
     const fetchFile = async () => {
@@ -36,12 +36,13 @@ function PdfView({ url }: { url: string }) {
     fetchFile();
   }, [url]);
 
+
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }): void => {
     setNumPages(numPages);
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col mx-auto justify-center items-center">
       <div className="sticky bg-indigo-600 top-0 z-50 p-2 rounded-b-lg">
         <div className="max-w-6xl px-2 grid grid-cols-6 gap-2">
           <Button

@@ -8,6 +8,7 @@ import { createStripePortal } from "@/actions/createStripePortal";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 
+
 function UpgradeButton() {
   const { hasActiveMembership, loading } = useSubscription();
   const [isPending, startTransition] = useTransition();
