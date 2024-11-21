@@ -31,7 +31,7 @@ async function ChatToFilePage({
       </div>
 
       {/* Left */}
-      <div className="col-span-5 lg:col-span-3 border-r-2 lg:border-indigo-600 lg:-order-1 overflow-auto hidden md:block">
+      <div className="col-span-5 lg:col-span-3 border-r-2 lg:border-indigo-600 lg:-order-1 overflow-auto hidden md:block"> 
         {/* PDFView */}
         <PdfView url={url} />
       </div>
